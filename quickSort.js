@@ -1,24 +1,32 @@
-const quickSort = function(list, beg, end) {
-  let init = beg || 0
+const quickSort = function(list, low, high) {
+  let init = low
   let finish = init
-  const pivotIndex = end || list.length - 1 
+  const pivotIndex = high 
   const pivot = list[pivotIndex]
-  while(finish < pivotIndex - 1) {
-    finish++
+  while(finish <= pivotIndex - 1) {
     if(list[finish] < pivot) {
       let sup = list[finish]
       list[finish] = list[init]
       list[init] = sup
       init++
     }
+    finish++
   }
-  list.splice(init, 0, list[pivotIndex])
-  list.pop()
-  // quickSort()
-  console.log(list)
+  if(init >= low) {
+    list.splice(init, 0, list[pivotIndex])
+    list.splice(pivotIndex + 1, 1)
+    if(init > low + 1) quickSort(list, low, init - 1)
+  }
   return list
 }
-quickSort([4, 7, 2, 6, 4, 1, 8, 3])
+
+// const part = function(list, low, high) {
+//   if(low < high){
+
+//   }
+// }
+const sorted = quickSort([4, 7, 2, 6, 4, 1, 8, 3], 0, 7)
+console.log(sorted)
 
 
 // const listOne = [1, 3, 2, 5, 4]
