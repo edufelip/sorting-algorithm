@@ -22,23 +22,18 @@ const list = [
   [1, 3, 2, 5, 4, 9, 8, 12, 0],
   [9, 0, 9, 0]
 ]
-const check = [
-  [1, 2, 3, 4, 5],
-  [2, 3, 7, 8, 9],
-  [0, 1, 2, 3, 4, 5, 8, 9, 12],
-  [0, 0, 9, 9]
-]
 const results = []
 
 list.forEach(arr => {
   results.push(selectionSort(arr))
 })
 
-for(let i = 0; i < list.length ; i++){
-  if(check[i].toString() === results[i].toString()) {
-    console.log(`array ${i+1} was sorted correctly`)
+for(let j = 0; j < list.length ; j++){
+  if(list[j].sort((a, b) => a - b).toString() === selectionSort(list[j]).toString() ) {
+    console.log(`array ${j+1} was sorted correctly`)
   } else {
-    console.log(`array ${i+1} wasn't sorted correctly, try again`)
-    console.log(results[i])
+    console.log(`array ${j+1} wasn't sorted correctly, try again`)
+    console.log(list[j].sort((a, b) => a - b))
+    console.log(selectionSort(list[j]))
   }
 }
