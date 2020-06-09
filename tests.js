@@ -1,6 +1,7 @@
 const selectionSort = require("./selection")
 const quickSort = require("./quick")
 const bubbleSort = require("./bubble")
+const insertionSort = require("./insertion")
 
 const list = [
   [1, 3, 2, 5, 4],
@@ -11,7 +12,7 @@ const list = [
 
 for(let j = 0; j < list.length ; j++){
   const jsSort = list[j].sort((a, b) => a - b)
-  const sSort = selectionSort(list[j])
+  const sSort = insertionSort(list[j])
   if(jsSort === sSort) {
     console.log(`array ${j+1} was sorted correctly`)
   } else {
