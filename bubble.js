@@ -17,12 +17,6 @@ const list = [
   [1, 3, 2, 5, 4, 9, 8, 12, 0],
   [9, 0, 9, 0]
 ]
-const check = [
-  [1, 2, 3, 4, 5],
-  [2, 3, 7, 8, 9],
-  [0, 1, 2, 3, 4, 5, 8, 9, 12],
-  [0, 0, 9, 9]
-]
 const results = []
 
 list.forEach(arr => {
@@ -30,10 +24,11 @@ list.forEach(arr => {
 })
 
 for(let j = 0; j < list.length ; j++){
-  if(check[j].toString() === results[j].toString()) {
+  if(list[j].sort((a, b) => a - b).toString() === bubbleSort(list[j]).toString() ) {
     console.log(`array ${j+1} was sorted correctly`)
   } else {
     console.log(`array ${j+1} wasn't sorted correctly, try again`)
-    console.log(results[j])
+    console.log(list[j].sort((a, b) => a - b))
+    console.log(bubbleSort(list[j]))
   }
 }
