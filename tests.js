@@ -22,6 +22,6 @@ for(let j = 0; j < list.length ; j++){
   } else {
     console.log(`array ${j+1} wasn't sorted correctly, try again`)
     console.log(jsSort)
-    console.log(sSort)
+    console.log(writtenSort)
   }
 }
