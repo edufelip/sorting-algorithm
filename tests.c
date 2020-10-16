@@ -1,23 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "selection.c"
+#include "quick.c"
 
 int main() {
-  int *num;
   int length;
   printf("Insert the length\n");
   scanf("%d", &length);
-  num = (int *) malloc(length*sizeof(int));
-  if (num == NULL) { printf("Lacks memory\n"); exit(1); }
+
+  int *list = (int *) malloc(length*sizeof(int));
+  if (list == NULL) { printf("Lacks memory\n"); exit(1); }
+
   printf("Insert the numbers\n");
   for(int i = 0; i < length; i++){
-    scanf("%d", &num[i]);
+    scanf("%d", &list[i]);
   }
-  selection(num, length);
+  quick(list, 0, length - 1);
   printf("----------\n");
   for(int i = 0; i < length; i++){
-    printf("%d\n", num[i]);
+    printf("%d\n", list[i]);
   }
-  free(num);
+  free(list);
   return 0;
 }
