@@ -28,7 +28,7 @@ int split(int* list, int left, int right) {
 void quick(int* list, int start, int end) {
   if (start < end) {
     int j = split(list, start, end);
-    quick(list, start, j-1);
-    quick(list, j+1, start);
+    quick(list, start, j - 1);
+    quick(list, j + 1, end);
   }
 }
