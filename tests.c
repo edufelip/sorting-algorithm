@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "selection.c"
+#include "insertion.c"
 
 int main() {
   int *num;
@@ -13,7 +13,7 @@ int main() {
   for(int i = 0; i < length; i++){
     scanf("%d", &num[i]);
   }
-  selection(num, length);
+  insertion(num, length);
   printf("----------\n");
   for(int i = 0; i < length; i++){
     printf("%d\n", num[i]);
