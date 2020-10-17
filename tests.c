@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "quick.c"
+#include "merge.c"
 
 int main() {
   int length;
@@ -14,7 +14,7 @@ int main() {
   for(int i = 0; i < length; i++){
     scanf("%d", &list[i]);
   }
-  quick(list, 0, length - 1);
+  mergeSort(list, 0, length - 1);
   printf("----------\n");
   for(int i = 0; i < length; i++){
     printf("%d\n", list[i]);
