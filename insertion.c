@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void insertion(int* list, int length) {
+void insertionSort(int* list, int length) {
   for(int i = 1; i < length; i++) {
     int key = list[i];
     int j = i - 1;

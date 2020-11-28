@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void bubble(int* list, int size) {
+void bubbleSort(int* list, int size) {
   int i, j, temp;
   for(i = size - 1; i > 0; i--) {
     int troca = 0;
