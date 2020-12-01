@@ -33,7 +33,6 @@ int * merge(int * list, int start, int middle, int end) {
       j++;
     }
   }
-  printf("\n");
   free(leftList);
   free(rightList);
   return list;
