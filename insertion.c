@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-void insertionSort(int* list, int length) {
-  for(int i = 1; i < length; i++) {
-    int key = list[i];
-    int j = i - 1;
+void insertionSort(long* list, long length) {
+  for(long i = 1; i < length; i++) {
+    long key = list[i];
+    long j = i - 1;
     while(j >= 0 && list[j] > key) {
       list[j + 1] = list[j];
       j--;
